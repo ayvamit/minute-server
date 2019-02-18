@@ -1,0 +1,50 @@
+var app = require("express")();
+var http = require("http").Server(app);
+var io = require("socket.io")(http);
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+var data_send = {
+  fuel: { value: Math.random(), last_updated: Date.now() },
+  speed: {
+    value: Math.floor(1 + Math.random() * 500),
+    last_updated: Date.now()
+  },
+  distance: {
+    value: Math.floor(100000 + Math.random() * 900000),
+    last_updated: Date.now()
+  },
+  becon: { value: Math.random(), last_updated: Date.now() },
+  door_lock_status: { value: getRandomInt(2), last_updated: Date.now() },
+  con_status: { value: Math.random(), last_updated: Date.now() },
+  location: { value: Math.random(), last_updated: Date.now() },
+  eng_temp: { value: getRandomInt(200), last_updated: Date.now() },
+  gear_pos: { value: getRandomInt(6), last_updated: Date.now() },
+  v_temp: { value: getRandomInt(50), last_updated: Date.now() },
+  ac_status: { value: getRandomInt(2), last_updated: Date.now() },
+  fuel_flow_rate: { value: Math.random(10), last_updated: Date.now() },
+  engine_temp: { value: Math.random(35), last_updated: Date.now() }
+};
+
+// thing to be done in following format
+// data = {
+//   'fuel': {
+//     lastUpdated: 129999999,
+//     value: 1233
+//   }
+// }
+
+app.get("/", function(req, res) {
+  res.sendFile(__dirname + "/display.html");
+});
+
+http.listen(3001, function() {
+  console.log("listening on *:3001");
+});
+
+setInterval(function() {
+  io.emit("message", data_send);
+  console.log(data_send);
+}, 1000);

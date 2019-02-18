@@ -1,0 +1,16 @@
+<html>
+  <head></head>
+
+  <body>
+    <div id="message"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+      socket.on("message", function(data_send) {
+        // console.log(msg);
+        document.getElementById("message").innerHTML = data_send.fuel.value;
+      });
+    </script>
+  </body>
+</html>

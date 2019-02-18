@@ -1,0 +1,66 @@
+data to be send in json file
+fuel 
+speed
+distance
+becon
+door_lock_status
+con_status
+location
+eng_temp
+gear_pos
+v_temp
+ac_status
+fuel_flow_rate
+engine_temp
+
+
+
+
+code
+
+
+// var data_send = [
+//   { key: "fuel", value: Math.random() },
+//   { key: "speed", value: Math.floor(1 + Math.random() * 500) },
+//   { key: " distance", value: Math.floor(100000 + Math.random() * 900000) },
+//   { key: "becon", value: Math.random() },
+//   { key: "door_lock_status", value: getRandomInt(2) },
+//   { key: "con_status", value: Math.random() },
+//   { key: "location:", value: Math.random() },
+//   { key: "eng_temp", value: getRandomInt(200) },
+//   { key: "gear_pos", value: getRandomInt(6) },
+//   { key: "v_temp", value: getRandomInt(50) },
+//   { key: "ac_status", value: getRandomInt(2) },
+//   { key: "fuel_flow_rate", value: Math.random(10) },
+//   { key: "engine_temp", value: Math.random(35) }
+// ];
+
+// var data_send = {
+//   fuel: { value: Math.random(), lastUpdated: Date.now() },
+//   speed: {
+//     value: Math.floor(1 + Math.random() * 500),
+//     lastUpdated: Date.now()
+//   },
+//   distance: {
+//     value: Math.floor(100000 + Math.random() * 900000),
+//     lastUpdated: Date.now()
+//   },
+//   becon: { value: Math.random(), lastUpdated: Date.now() },
+//   door_lock_status: { value: getRandomInt(2), lastUpdated: Date.now() },
+//   con_status: { value: Math.random(), lastUpdated: Date.now() },
+//   location: { value: Math.random(), lastUpdated: Date.now() },
+//   eng_temp: { value: getRandomInt(200), lastUpdated: Date.now() },
+//   gear_pos: { value: getRandomInt(6), lastUpdated: Date.now() },
+//   v_temp: { value: getRandomInt(50), lastUpdated: Date.now() },
+//   ac_status: { value: getRandomInt(2), lastUpdated: Date.now() },
+//   fuel_flow_rate: { value: Math.random(10), lastUpdated: Date.now() },
+//   engine_temp: { value: Math.random(35), lastUpdated: Date.now() }
+// };
+
+// thing to be done in following format
+// data = {
+//   'fuel': {
+//     lastUpdated: 129999999,
+//     value: 1233
+//   }
+// }
